@@ -4,18 +4,6 @@
 	"plugins": [
 		"@typescript-eslint"
 	],
-	"rules": {
-		"semi": "off",
-		"@typescript-eslint/semi": [
-			"warn"
-		],
-		"@typescript-eslint-interface": [
-			"error",
-			{
-				"allowSingleExtends": true
-			}
-		]
-	},
 	"extends": [
 		"eslint:recommended",
 		"next/core-web-vitals",
