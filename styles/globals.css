@@ -4,9 +4,9 @@ body {
 	padding: 0;
 
 	color: var(--black);
-	background-color: #F5F6F8;
+	background: #F5F6F8;
 
-	font-family: var(--font-family);
+	font-family: "Noto Sans KR", sans-serif;
 }
 
 a {
@@ -19,12 +19,26 @@ a {
 	box-sizing: border-box;
 }
 
+.visualyHidden {
+	position: absolute;
+
+	overflow: hidden;
+
+	width: 0;
+	height: 0;
+}
+
 :root {
-	--font-family: roboto, sans-serif;
 	--black: #3B434E;
-	--white: #FFFF;
-	--primary: #7653FC;
+	--gray-light: #EBEBEB;
+	--gray: #A4A4A4;
+	--gray-dark: #6C7077;
+	--white: white;
+	--primary: #7351F5;
+	--primary-hover: #6344DF;
+	--red-light: #FEA291;
 	--red: #FC836D;
-	--green: #1DC37E;
+	--green: #007B48;
 	--green-light: #C8F8E4;
+	--font-family: "Noto Sans KR", sans-serif;
 }
