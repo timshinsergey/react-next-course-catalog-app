@@ -4,6 +4,14 @@
 	"plugins": [
 		"@typescript-eslint"
 	],
+	"rules": {
+		"@typescript-eslint/no-empty-interface": [
+			"error",
+			{
+				"allowSingleExtends": true
+			}
+		]
+	},
 	"extends": [
 		"eslint:recommended",
 		"next/core-web-vitals",
