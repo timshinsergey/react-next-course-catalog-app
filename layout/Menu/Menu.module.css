@@ -1,4 +1,4 @@
-.first-level {
+.firstLevel {
 	display: grid;
 	align-items: center;
 
@@ -11,23 +11,23 @@
 	gap: 20px;
 }
 
-.first-level-list {
+.firstLevelList {
 	padding: 0;
 
 	list-style: none;
 }
 
-.first-level-active,
-.first-level:hover {
+.firstLevelActive,
+.firstLevel:hover {
 	color: var(--primary);
 }
 
-.first-level-active svg,
-.first-level:hover svg {
+.firstLevelActive svg,
+.firstLevel:hover svg {
 	fill: var(--primary);
 }
 
-.second-level {
+.secondLevel {
 	margin-bottom: 10px;
 	padding: 0;
 
@@ -44,7 +44,7 @@
 	font-weight: 300;
 }
 
-.second-block {
+.secondBlock {
 	margin-top: 15px;
 	margin-left: 12px;
 	padding: 0 0 0 32px;
@@ -54,7 +54,7 @@
 	border-left: 1px solid #DFDFDF;
 }
 
-.second-level-block {
+.secondLevelBlock {
 	overflow: hidden;
 
 	padding: 0;
@@ -62,7 +62,7 @@
 	list-style: none;
 }
 
-.third-level {
+.thirdLevel {
 	display: block;
 
 	margin-bottom: 10px;
@@ -76,7 +76,7 @@
 	font-weight: 500;
 }
 
-.third-level-active,
-.third-level:hover {
+.thirdLevelActive,
+.thirdLevel:hover {
 	color: var(--primary);
 }

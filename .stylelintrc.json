@@ -7,6 +7,9 @@
 		"stylelint-order"
 	],
 	"rules": {
+		"selector-class-pattern": [
+			null
+		],
 		"indentation": [
 			"tab"
 		],
