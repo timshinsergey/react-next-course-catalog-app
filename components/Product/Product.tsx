@@ -1,8 +1,9 @@
+import { useRef, useState } from 'react'
 import cn from 'classnames'
 import Image from 'next/image'
 import { ProductProps } from './Product.props'
 import styles from './Product.module.css'
-import { Button, Card, Divider, Rating, Tag } from '..'
+import { Button, Card, Divider, Rating, Review, Tag } from '..'
 import { priceRu, declOfNum } from '../../helpres/helpres'
 
 export const Product = ({
@@ -10,6 +11,8 @@ export const Product = ({
   className,
   ...props
 }: ProductProps): JSX.Element => {
+  const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false)
+
   return (
     <div className={className} {...props}>
       <Card className={styles.product}>
@@ -91,12 +94,21 @@ export const Product = ({
           <Button appearance='primary'>Узнать подробнее</Button>
           <Button
             appearance='ghost'
+            arrow={isReviewOpened ? 'down' : 'right'}
             className={styles.reviewButton}
-            onClick={() => console.log('s')}
+            onClick={() => setIsReviewOpened(!isReviewOpened)}
           >
             Читать отзывы
           </Button>
         </div>
+      </Card>
+      <Card color='blue' className={styles.reviews}>
+        {product.reviews.map((r) => (
+          <div key={r._id}>
+            <Review review={r} />
+            <Divider />
+          </div>
+        ))}
       </Card>
     </div>
   )
