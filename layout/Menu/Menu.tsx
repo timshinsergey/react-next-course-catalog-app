@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { AppContext } from '../../context/app.context'
-import { firstLevelMenu } from '../../helpres/helpres'
+import { firstLevelMenu } from '../../helpers/helpers'
 import { FirstLevelMenuItem, PageItem } from '../../interfaces/menu.interface'
 import styles from './Menu.module.css'
 

@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import { firstLevelMenu } from '../../helpres/helpres'
+import { API } from '../../helpers/api'
+import { firstLevelMenu } from '../../helpers/helpers'
 import { MenuItem } from '../../interfaces/menu.interface'
 import { TopLevelCategory } from '../../interfaces/page.interface'
 import { withLayout } from '../../layout/Layout'
@@ -37,12 +38,9 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({
       notFound: true,
     }
   }
-  const { data: menu } = await axios.post<MenuItem[]>(
-    `${process.env.NEXT_PUBLIC_DOMAIN}/api/top-page/find`,
-    {
-      firstCategory: firstCategoryItem.id,
-    }
-  )
+  const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
+    firstCategory: firstCategoryItem.id,
+  })
   return {
     props: {
       menu,

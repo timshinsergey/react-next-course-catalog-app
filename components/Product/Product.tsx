@@ -3,8 +3,8 @@ import cn from 'classnames'
 import Image from 'next/image'
 import { ProductProps } from './Product.props'
 import styles from './Product.module.css'
-import { Button, Card, Divider, Rating, Review, Tag } from '..'
-import { priceRu, declOfNum } from '../../helpres/helpres'
+import { Button, Card, Divider, Rating, Review, ReviewForm, Tag } from '..'
+import { priceRu, declOfNum } from '../../helpers/helpers'
 
 export const Product = ({
   product,
@@ -109,6 +109,7 @@ export const Product = ({
             <Divider />
           </div>
         ))}
+        <ReviewForm productId={product._id} isOpened={isReviewOpened} />
       </Card>
     </div>
   )
