@@ -29,7 +29,7 @@ export const TopPageComponent = ({
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
-        <Htag tag='h1'>{page.title}</Htag>
+        {page.title && <Htag tag='h1'>{page.title}</Htag>}
         {products && (
           <Tag color='grey' size='m' aria-label={products.length + 'элементов'}>
             {products.length}
@@ -48,14 +48,16 @@ export const TopPageComponent = ({
             />
           ))}
       </div>
-      <div className={styles.hhTitle}>
-        <Htag tag='h2'>Вакансии - {page.category}</Htag>
-        <Tag color='red' size='m'>
-          hh.ru
-        </Tag>
-      </div>
       {firstCategory == TopLevelCategory.Courses && page.hh && (
-        <HhData {...page.hh} />
+        <>
+          <div className={styles.hhTitle}>
+            <Htag tag='h2'>Вакансии - {page.category}</Htag>
+            <Tag color='red' size='m'>
+              hh.ru
+            </Tag>
+          </div>
+          <HhData {...page.hh} />
+        </>
       )}
       {page.advantages && page.advantages.length > 0 && (
         <>
@@ -69,12 +71,16 @@ export const TopPageComponent = ({
           dangerouslySetInnerHTML={{ __html: page.seoText }}
         />
       )}
-      <Htag tag='h2'>Получаемые навыки</Htag>
-      {page.tags.map((t) => (
-        <Tag key={t} color='primary'>
-          {t}
-        </Tag>
-      ))}
+      {page.tags.length && (
+        <>
+          <Htag tag='h2'>Получаемые навыки</Htag>
+          {page.tags.map((t) => (
+            <Tag key={t} color='primary'>
+              {t}
+            </Tag>
+          ))}
+        </>
+      )}
     </div>
   )
 }
