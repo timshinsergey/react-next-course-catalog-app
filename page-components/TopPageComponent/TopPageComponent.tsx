@@ -1,4 +1,5 @@
 import { useEffect, useReducer } from 'react'
+import { useReducedMotion } from 'framer-motion'
 import { Advantages, HhData, Htag, Product, Sort, Tag } from '../../components'
 import { TopPageComponentProps } from './TopPageComponent.props'
 import styles from './TopPageComponent.module.css'
@@ -7,14 +8,15 @@ import { SortEnum } from '../../components/Sort/Sort.props'
 import { sortReducer } from './sort.reducer'
 
 export const TopPageComponent = ({
-  firstCategory,
   page,
   products,
+  firstCategory,
 }: TopPageComponentProps): JSX.Element => {
   const [{ products: sortedProducts, sort }, dispathSort] = useReducer(
     sortReducer,
     { products, sort: SortEnum.Rating }
   )
+  const shouldReduceMotion = useReducedMotion()
 
   const setSort = (sort: SortEnum) => {
     dispathSort({ type: sort })
@@ -37,8 +39,13 @@ export const TopPageComponent = ({
       </div>
       <div role='list'>
         {sortedProducts &&
-          sortedProducts.map((product) => (
-            <Product key={product._id} layout product={product} />
+          sortedProducts.map((p) => (
+            <Product
+              role='listitem'
+              layout={shouldReduceMotion ? false : true}
+              key={p._id}
+              product={p}
+            />
           ))}
       </div>
       <div className={styles.hhTitle}>
