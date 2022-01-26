@@ -118,6 +118,7 @@ export const Product = motion(
                 arrow={isReviewOpened ? 'down' : 'right'}
                 className={styles.reviewButton}
                 onClick={() => setIsReviewOpened(!isReviewOpened)}
+                aria-expanded={isReviewOpened}
               >
                 Читать отзывы
               </Button>
@@ -128,7 +129,12 @@ export const Product = motion(
             variants={variants}
             initial='hidden'
           >
-            <Card color='blue' className={styles.reviews}>
+            <Card
+              color='blue'
+              className={styles.reviews}
+              ref={reviewRef}
+              tabIndex={isReviewOpened ? 0 : -1}
+            >
               {product.reviews.map((r) => (
                 <div key={r._id}>
                   <Review review={r} />
