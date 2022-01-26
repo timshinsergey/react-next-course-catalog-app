@@ -21,6 +21,7 @@ class MyDocument extends Document {
         <Head>
           <link rel='icon' href='/favicon.ico' />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
+          <link rel='preconnect' href='https://mc.yandex.ru' />
           <link
             rel='preconnect'
             href='https://fonts.gstatic.com'
@@ -30,6 +31,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'
             rel='stylesheet'
           />
+          <meta property='og:locale' content='ru_RU' />
         </Head>
         <body>
           <Main />
